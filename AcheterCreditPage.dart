@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'bottom_nav.dart';
-import 'services/notification_service.dart'; // ✅ AJOUT
+import 'services/notification_service.dart'; 
 
 class AcheterCreditPage extends StatefulWidget {
   const AcheterCreditPage({super.key});
@@ -30,9 +30,7 @@ class _AcheterCreditPageState extends State<AcheterCreditPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFF4F7FB),
 
-////////////////////////////////////////////////////////////
-/// APPBAR
-////////////////////////////////////////////////////////////
+
       appBar: AppBar(
         elevation: 0,
         title: const Text("Acheter du crédit"),
@@ -40,17 +38,13 @@ class _AcheterCreditPageState extends State<AcheterCreditPage> {
         backgroundColor: mainColor,
       ),
 
-////////////////////////////////////////////////////////////
-/// BODY
-////////////////////////////////////////////////////////////
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
 
-////////////////////////////////////////////////////////////
-/// HEADER CARD
-////////////////////////////////////////////////////////////
+
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(25),
@@ -85,9 +79,7 @@ class _AcheterCreditPageState extends State<AcheterCreditPage> {
 
             const SizedBox(height: 30),
 
-////////////////////////////////////////////////////////////
-/// INPUT CARD
-////////////////////////////////////////////////////////////
+
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
@@ -117,9 +109,7 @@ class _AcheterCreditPageState extends State<AcheterCreditPage> {
 
                   const SizedBox(height: 25),
 
-////////////////////////////////////////////////////////////
-/// BOUTON ACHAT
-////////////////////////////////////////////////////////////
+
                   SizedBox(
                     width: double.infinity,
                     height: 55,
@@ -154,9 +144,7 @@ class _AcheterCreditPageState extends State<AcheterCreditPage> {
                           "date": Timestamp.now(),
                         });
 
-////////////////////////////////////////////////////////////
-/// 🔔 NOTIFICATION ACHAT
-////////////////////////////////////////////////////////////
+
                         NotificationsService.showNotification(
                           id: 50,
                           title: "Achat réussi",
@@ -191,9 +179,7 @@ class _AcheterCreditPageState extends State<AcheterCreditPage> {
 
             const SizedBox(height: 30),
 
-////////////////////////////////////////////////////////////
-/// RESULTAT CARD
-////////////////////////////////////////////////////////////
+
             if (achatEffectue)
               AnimatedContainer(
                 duration: const Duration(milliseconds: 500),
