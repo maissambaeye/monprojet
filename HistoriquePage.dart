@@ -19,9 +19,7 @@ class HistoriquePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F5F5),
 
-////////////////////////////////////////////////////////////
-/// APPBAR
-////////////////////////////////////////////////////////////
+
       appBar: AppBar(
         title: const Text("Historique", style: TextStyle(color: Colors.white)),
         centerTitle: true,
@@ -58,9 +56,7 @@ class HistoriquePage extends StatelessWidget {
         ],
       ),
 
-////////////////////////////////////////////////////////////
-/// BODY
-////////////////////////////////////////////////////////////
+
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance
             .collection("credits")
@@ -96,7 +92,7 @@ class HistoriquePage extends StatelessWidget {
               double kwhRestant = ((data["kwh"] ?? 0) as num).toDouble();
               double kwhConsomme = ((data["kwhConsomme"] ?? 0) as num).toDouble();
 
-              // 🔥 BLOQUE A ZERO
+             
               if (kwhRestant < 0) kwhRestant = 0;
 
               final date = (data["date"] as Timestamp).toDate();
@@ -121,12 +117,12 @@ class HistoriquePage extends StatelessWidget {
                   ],
                 ),
 
-////////////////////////////////////////////////////////////
+
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-////////////////////////////////////////////////////////////
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -148,7 +144,7 @@ class HistoriquePage extends StatelessWidget {
 
                     const SizedBox(height: 8),
 
-////////////////////////////////////////////////////////////
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -185,9 +181,6 @@ class HistoriquePage extends StatelessWidget {
 
                     const SizedBox(height: 12),
 
-////////////////////////////////////////////////////////////
-/// PROGRESS
-////////////////////////////////////////////////////////////
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: LinearProgressIndicator(
