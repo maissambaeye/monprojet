@@ -21,7 +21,7 @@ class _MaPageState extends State<MaPage> {
     return Scaffold(
       body: Stack(
         children: [
-          // 🔹 Dégradé bleu → indigo en fond
+          
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -36,7 +36,7 @@ class _MaPageState extends State<MaPage> {
             padding: const EdgeInsets.symmetric(vertical: 50),
             child: Column(
               children: [
-                // 🔹 Titre/logo
+              
                 const Text(
                   "SENECONSOM",
                   style: TextStyle(
@@ -47,7 +47,7 @@ class _MaPageState extends State<MaPage> {
                 ),
                 const SizedBox(height: 30),
 
-                // 🔹 Bloc blanc arrondi haut + bas
+               
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   padding: const EdgeInsets.all(25),
@@ -79,7 +79,7 @@ class _MaPageState extends State<MaPage> {
                       ),
                       const SizedBox(height: 25),
 
-                      // NOM
+                     
                       _inputField(
                         controller: nameController,
                         label: "Nom complet",
@@ -88,7 +88,7 @@ class _MaPageState extends State<MaPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      // EMAIL
+                     
                       _inputField(
                         controller: emailController,
                         label: "Email",
@@ -97,7 +97,7 @@ class _MaPageState extends State<MaPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      // NUMERO COMPTEUR
+                     
                       _inputField(
                         controller: compteurController,
                         label: "Numéro compteur",
@@ -106,7 +106,7 @@ class _MaPageState extends State<MaPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      // PASSWORD
+
                       _inputField(
                         controller: passwordController,
                         label: "Mot de passe",
@@ -116,7 +116,7 @@ class _MaPageState extends State<MaPage> {
                       ),
                       const SizedBox(height: 15),
 
-                      // CONFIRM PASSWORD
+                      
                       _inputField(
                         controller: confirmController,
                         label: "Confirmer mot de passe",
@@ -126,7 +126,7 @@ class _MaPageState extends State<MaPage> {
                       ),
                       const SizedBox(height: 25),
 
-                      // 🔵 BOUTON INSCRIPTION
+                      
                       SizedBox(
                         width: double.infinity,
                         height: 50,
@@ -150,7 +150,7 @@ class _MaPageState extends State<MaPage> {
                             }
 
                             try {
-                              // 🔥 CREATE USER
+                             
                               UserCredential userCredential =
                                   await FirebaseAuth.instance
                                       .createUserWithEmailAndPassword(
@@ -160,7 +160,7 @@ class _MaPageState extends State<MaPage> {
 
                               final uid = userCredential.user!.uid;
 
-                              // 🔥 SAVE FIRESTORE
+                             
                               await FirebaseFirestore.instance
                                   .collection("users")
                                   .doc(uid)
@@ -218,7 +218,7 @@ class _MaPageState extends State<MaPage> {
     );
   }
 
-  // ⭐ INPUT CUSTOM AVEC HINT ET THEME BLEU
+  
   Widget _inputField({
     required TextEditingController controller,
     required String label,
